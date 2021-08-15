@@ -1,0 +1,39 @@
+{
+  "name": "starter",
+  "version": "1.0.0",
+  "description": "Pig Game",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "prebuild": "rmdir /q /s dist",
+    "build": "parcel build index.html --dist-dir ./dist --detailed-report --public-url index.html",
+    "postbuild": "cpx src/img/* dist/src/img -v"
+  },
+  "author": "Rini Sarkar",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
+    "parcel": "^2.0.0-rc.0",
+    "parcel-plugin-static-files": "^2.0.5",
+    "parcel-plugin-static-files-copy": "^2.6.0"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "cd": "^0.3.3",
+    "core-js": "^3.16.1",
+    "cpx": "^1.5.0",
+    "leaflet": "^1.7.1",
+    "lodash-es": "^4.17.21",
+    "mkdirp": "^1.0.4",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rini-the-challenger/ui.git"
+  },
+  "staticFiles": {
+    "staticPath": "src/img/*",
+    "staticOutDir": "src/img/",
+    "watcherGlob": "*"
+  }
+}
